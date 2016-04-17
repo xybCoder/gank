@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="Theme.AppCompat.NoActionBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CollapsingToolbarTitleStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <style name="MaterialButton">
+        <item name="android:layout_height">@dimen/material_button_height</item>
+        <item name="android:background">@drawable/bg_material_button_lite_blue</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/material_button_text_size</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+</resources>

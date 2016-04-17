@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <com.xybcoder.gank.ui.widget.RatioImageView
+        android:id="@+id/iv_index_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/text_margin"
+        android:textColor="@color/md_white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:background="@color/md_amber_100"
+        tools:text="2015年11月11"
+        tools:visibility="visible" />
+
+</android.support.v7.widget.CardView>

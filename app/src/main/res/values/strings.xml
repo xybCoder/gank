@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">干货</string>
+    //menu
+    <string name="action_about">关于Gank</string>
+    <string name="action_github_trending">今日Github热点</string>
+    <string name="action_switch_theme">切换主题</string>
+    <string name="action_save">保存</string>
+    <string name="action_share">分享</string>
+    <string name="action_copy_url">复制地址</string>
+    <string name="action_open_in_browser">打开链接</string>
+    <string name="action_refresh">刷新页面</string>
+    <string name="action_more_operation">更多操作</string>
+    <string name="url_github_trending">https://github.com/trending</string>
+    <string name="action_show_girls">纯妹纸</string>
+
+    //toolbar title
+    <string name="title_activity_ganhuo">干货集中营</string>
+
+
+    <string name="load_failed">加载失败</string>
+    <string name="retry">重试</string>
+    <string name="girl">girl</string>
+    <string name="no_more_data">全部加载完啦！</string>
+    <string name="gank_symbol">&#032; &#187;</string>
+    <string name="copy_success">复制成功</string>
+    <string name="open_url_failed">打开失败，没有找到可以打开该链接的其它应用o(︶︿︶)o唉</string>
+    <string name="something_wrong">出了一点小问题o(︶︿︶)o唉</string>
+    <string name="developers">开发者</string>
+    <string name="introduce_and_help">项目介绍</string>
+    <string name="my_github">我的Github: https://github.com/xybCoder</string>
+    <string name="thanks">特别感谢</string>
+    <string name="open_source">用到的开源库</string>
+    <string name="market">market://details?id=%s</string>
+    <string name="about_app">关于Gank</string>
+    <string name="version">Version: %s</string>
+
+    <string name="girl_reject_your_request">禽兽,你走开，妹纸拒绝了您的请求!</string>
+    <string name="share_girl_to">分享妹纸到</string>
+    <string name="save_girl_successfully">该妹子已经躺在您的图库中了!</string>
+    //ShareUtil
+    <string name="share_app">发现了一款技术与妹子并存干货App「Gank」, 快来^_^，下载地址：http://fir.im/en8c</string>
+    <string name="share_app_to_friend">分享「Gank」给朋友</string>
+    <string name="download_gank">\n下载「Gank」^_^ : http://fir.im/en8c</string>
+    <string name="share_gank_to">分享干货到</string>
+    <string name="share_video_to">分享视频到</string>
+
+    //larger String
+    <string name="introduce">Gank 是干货集中营非官方客户端，每天精选妹纸图片，
+        一个精选的休息视频，若干精选的Android，ios，web等相关的技术干货。主页采取了突出妹纸的卡片设计，
+        点击图片可查看大图，点击卡片下的文字可进入每日干货，右下角的『fab』可进入纯干货页面，可根据分类浏览。
+        \n\n本项目开源，由xybCoder完成，是学习RxJava，RxAndroid,Retrofit等优秀开源框架以及MVP设计模式的产物，
+        项目借鉴了drakeet的开源项目Meizi以及maoruibin的开源项目GankDaily，收获很多，感谢开源社区。
+        \n\n数据来源: 干货集中营 http://gank.io/api</string>
+    <string name="thank_content"><b>daimajia</b>\n干货集中营 : http://gank.io\n\n<b>drakeet</b>\n妹纸&#038;gank·io : https://github.com/drakeet/Meizhi\n\n<b>maoruibin</b>\nGankDaily : https://github.com/maoruibin/GankDaily</string>
+    <string name="open_source_libraries_list">com.jakewharton:butterknife:7.0.1\ncom.commit451:PhotoView:1.2.5</string>
+</resources>

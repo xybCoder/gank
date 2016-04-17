@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xybcoder.gank">
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- begin umeng -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="571236dc67e58ed46c0000da"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="${UMENG_CHANNEL_VALUE}" />
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService"/>
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!-- end umeng -->
+
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.activity.GankActivity" />
+        <activity
+            android:name=".ui.activity.MeiZhiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.GanHuoActivity"
+            android:label="@string/title_activity_ganhuo"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.AboutActivity" />
+        <activity android:name=".ui.activity.WebActivity" />
+        <activity android:name=".ui.activity.WebVideoActivity" />
+        <activity
+            android:name=".ui.activity.ListGirlsActivity"
+            android:label="@string/action_show_girls"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

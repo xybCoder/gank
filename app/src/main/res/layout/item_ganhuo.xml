@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_ganhuo"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="16dp"
+        android:text="@string/gank_symbol"
+        android:padding="5dp"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_desc_with_who"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/grey"
+        android:textSize="14sp" />
+
+
+</LinearLayout>
