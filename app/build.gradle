@@ -77,8 +77,6 @@ android {
 }
 
 
-
-
 //set release sign info synchronously
 def Properties props = new Properties()
 def propFile = file('../gradle.properties')
@@ -100,6 +98,7 @@ if (propFile.canRead()) {
     println 'release build not found signing file'
     android.buildTypes.release.signingConfig = null
 }
+
 
 
 dependencies {
