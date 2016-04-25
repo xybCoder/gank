@@ -25,18 +25,18 @@ Gank是 http://gank.io/ 非官方客户端之一，每天提供一张精选的�
 本项目是学习RxJava，RxAndroid,Retrofit等优秀开源框架以及MVP设计模式的产物,数据来源: daimajia的干货集中营 http://gank.io/api
 
 
-**DownLoad**     
+**DownLoad：**     
 
 http://fir.im/gan
 
-**Thanks**
+**Thanks：**
 
 >* drakeet/Meizhi
 >* maoruibin/GankDaily
 >* Panl/Gank.io
 >* 代码家/干货集中营api
 
-**Blog:**
+**Blog：**
 
 
 http://xybcoder.github.io/
