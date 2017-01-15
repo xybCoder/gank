@@ -4,7 +4,7 @@
 
 **2. fix some bug**
 
-**3. 增加 okhttp 缓存处理**
+**3. 增加 okhttp 拦截器，缓存处理**
 
 # 1.1.0版本gank
 
