@@ -1,4 +1,12 @@
-# gank
+# 1.2.0版本gank
+
+**1. 升级rxjava,retrofit,butterknife等相关的一些依赖库**
+
+**2. fix some bug**
+
+**3. 增加 okhttp 缓存处理**
+
+# 1.1.0版本gank
 
 gank是干货集中营非官方客户端，主要练习RxJava、RxAndroid、Retrofit & MVP
 
