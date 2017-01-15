@@ -1,12 +1,11 @@
 package com.xybcoder.gank.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xybcoder.gank.App;
+import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.xybcoder.gank.presenter.BasePresenter;
 
 import butterknife.ButterKnife;
@@ -14,7 +13,7 @@ import butterknife.ButterKnife;
 /**
  * Created by xybcoder on 2016/3/1.
  */
-public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
+public abstract class BaseFragment<T extends BasePresenter> extends RxFragment {
 
     protected T presenter;
 
@@ -33,7 +32,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        ButterKnife.bind(getActivity()).unbind();
     }
 
     @Override

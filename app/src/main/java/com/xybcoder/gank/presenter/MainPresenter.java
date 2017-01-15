@@ -4,8 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.xybcoder.gank.GankConfig;
-import com.xybcoder.gank.R;
-import com.xybcoder.gank.http.GankClient;
+import com.xybcoder.gank.network.GankClient;
 import com.xybcoder.gank.model.FunnyData;
 import com.xybcoder.gank.model.MeiziData;
 import com.xybcoder.gank.model.entity.Gank;
@@ -15,11 +14,12 @@ import com.xybcoder.gank.ui.activity.ListGirlsActivity;
 import com.xybcoder.gank.ui.activity.WebActivity;
 import com.xybcoder.gank.ui.iView.IMainView;
 
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func2;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.BiFunction;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+
 
 /**
  * Created by xybcoder on 2016/3/1.
@@ -32,24 +32,24 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
     @Override
     public void release() {
-        subscription.unsubscribe();
+
     }
 
     public void fetchMeiziData(int page) {
         iView.showProgress();
-        subscription = Observable.zip(GankClient.getGankRetrofitInstance().getMeiziData(page),
-                GankClient.getGankRetrofitInstance().getFunnyData(page),
-                new Func2<MeiziData, FunnyData, MeiziData>() {
+         Observable.zip(GankClient.getGankRetrofitInstance().getMeiziData(page),
+                 GankClient.getGankRetrofitInstance().getFunnyData(page),
+                 new BiFunction<MeiziData, FunnyData, MeiziData>() {
                     @Override
-                    public MeiziData call(MeiziData meiziData, FunnyData funnyData) {
+                    public MeiziData apply(MeiziData meiziData, FunnyData funnyData) {
                         return createMeiziDataWith休息视频Desc(meiziData, funnyData);
                     }
                 })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<MeiziData>() {
+                .subscribe(new Consumer<MeiziData>() {
                     @Override
-                    public void call(MeiziData meiziData) {
+                    public void accept(MeiziData meiziData) {
                         if (meiziData.results.size() == 0){
                             iView.showNoMoreData();
                         }else {
@@ -57,9 +57,9 @@ public class MainPresenter extends BasePresenter<IMainView> {
                         }
                         iView.hideProgress();
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         iView.showErrorView();
                         iView.hideProgress();
                     }

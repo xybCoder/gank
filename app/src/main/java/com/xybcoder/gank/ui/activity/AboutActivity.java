@@ -10,7 +10,7 @@ import com.xybcoder.gank.presenter.AboutPresenter;
 import com.xybcoder.gank.ui.iView.IAboutView;
 import com.xybcoder.gank.util.ShareUtil;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -19,9 +19,9 @@ import butterknife.OnClick;
 
 public class AboutActivity extends ToolBarActivity<AboutPresenter> implements IAboutView{
 
-    @Bind(R.id.toolbar_layout)
+    @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
-    @Bind(R.id.tv_app_version)
+    @BindView(R.id.tv_app_version)
     TextView tvAppVersion;
 
     @OnClick(R.id.fab)

@@ -1,4 +1,4 @@
-package com.xybcoder.gank.adapter;
+package com.xybcoder.gank.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +14,7 @@ import com.xybcoder.gank.util.StringStyleUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -51,7 +51,7 @@ public class GanHuoAdapter extends RecyclerView.Adapter<GanHuoAdapter.GanHuoHold
 
     class GanHuoHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_desc_with_who)
+        @BindView(R.id.tv_desc_with_who)
         TextView tvDescWithWho;
 
         public GanHuoHolder(View itemView) {

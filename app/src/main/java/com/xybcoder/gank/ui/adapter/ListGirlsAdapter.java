@@ -1,11 +1,8 @@
-package com.xybcoder.gank.adapter;
+package com.xybcoder.gank.ui.adapter;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.ColorFilter;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
@@ -19,7 +16,6 @@ import com.xybcoder.gank.GankConfig;
 import com.xybcoder.gank.R;
 import com.xybcoder.gank.ShareElement;
 import com.xybcoder.gank.model.entity.Meizi;
-import com.xybcoder.gank.ui.activity.GankActivity;
 import com.xybcoder.gank.ui.activity.MeiZhiActivity;
 import com.xybcoder.gank.ui.widget.RatioImageView;
 import com.xybcoder.gank.util.DateUtil;
@@ -27,7 +23,7 @@ import com.xybcoder.gank.util.DateUtil;
 import java.io.Serializable;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -72,9 +68,9 @@ public class ListGirlsAdapter extends RecyclerView.Adapter<ListGirlsAdapter.List
     }
 
     class ListGirlsHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.iv_index_photo)
+        @BindView(R.id.iv_index_photo)
         RatioImageView mIvIndexPhoto;
-        @Bind(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView mTvTime;
 
 

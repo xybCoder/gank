@@ -5,7 +5,10 @@ import android.content.Context;
 
 import com.xybcoder.gank.ui.iView.IBaseView;
 
-import rx.Subscription;
+import org.reactivestreams.Subscription;
+
+import io.reactivex.disposables.Disposable;
+
 
 /**
  * 基础presenter
@@ -13,7 +16,6 @@ import rx.Subscription;
  */
 public abstract class BasePresenter<T extends IBaseView>  {
 
-    protected Subscription subscription;
     protected Context context;
     protected T iView;
 

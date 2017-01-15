@@ -1,4 +1,4 @@
-package com.xybcoder.gank.adapter;
+package com.xybcoder.gank.ui.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

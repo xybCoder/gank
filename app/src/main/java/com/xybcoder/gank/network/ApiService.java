@@ -1,19 +1,19 @@
-package com.xybcoder.gank.http;
+package com.xybcoder.gank.network;
 import com.xybcoder.gank.GankConfig;
 import com.xybcoder.gank.model.GanHuoData;
 import com.xybcoder.gank.model.FunnyData;
 import com.xybcoder.gank.model.GankData;
 import com.xybcoder.gank.model.MeiziData;
 
-import retrofit.http.GET;
-import retrofit.http.Path;
-import rx.Observable;
+import io.reactivex.Observable;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * get data
  * Created by xybcoder on 2016/3/1.
  */
-public interface GankRetrofit {
+public interface ApiService {
 
     // http://gank.io/api/data/数据类型/请求个数/第几页
     @GET(value = "data/福利/" + GankConfig.MEIZI_SIZE + "/{page}")

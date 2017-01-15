@@ -8,8 +8,7 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.xybcoder.gank.R;
 import com.xybcoder.gank.presenter.BasePresenter;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * 带Toolbar的基础Activity
@@ -20,9 +19,9 @@ public abstract class ToolBarActivity<T extends BasePresenter> extends BaseActiv
     protected T presenter;
     protected boolean isToolBarHiding = false;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
-    @Bind(R.id.app_bar)
+    @BindView(R.id.app_bar)
     protected AppBarLayout appBar;
 
     @Override

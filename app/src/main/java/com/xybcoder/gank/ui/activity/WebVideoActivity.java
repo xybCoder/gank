@@ -17,8 +17,7 @@ import com.xybcoder.gank.presenter.WebVideoPresenter;
 import com.xybcoder.gank.ui.iView.IWebVideo;
 import com.xybcoder.gank.ui.widget.LoveVideoView;
 import com.xybcoder.gank.util.ShareUtil;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by xybcoder on 2016/3/16.
@@ -26,9 +25,9 @@ import butterknife.Bind;
 public class WebVideoActivity extends ToolBarActivity<WebVideoPresenter> implements IWebVideo {
 
     private Gank gank;
-    @Bind(R.id.progressbar)
+    @BindView(R.id.progressbar)
     NumberProgressBar progressbar;
-    @Bind(R.id.web_video)
+    @BindView(R.id.web_video)
     LoveVideoView webVideo;
 
     @Override

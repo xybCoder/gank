@@ -1,19 +1,19 @@
-package com.xybcoder.gank.http;
+package com.xybcoder.gank.network;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
-import retrofit.GsonConverterFactory;
-import retrofit.Retrofit;
-import retrofit.RxJavaCallAdapterFactory;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  *
- * Created by xybcoder on 16/3/1.
+ *
  */
 public class GankClient {
     public static final String HOST = "http://gank.io/api/";
-    private static GankRetrofit gankRetrofit;
+    private static ApiService gankRetrofit;
     protected static final Object monitor = new Object();
     private static Retrofit retrofit;
 
@@ -28,15 +28,15 @@ public class GankClient {
         retrofit = new Retrofit.Builder()
                 .baseUrl(HOST)
                 .addConverterFactory(GsonConverterFactory.create(gson))
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
     }
 
 
-    public static GankRetrofit getGankRetrofitInstance() {
+    public static ApiService getGankRetrofitInstance() {
         synchronized (monitor) {
             if (gankRetrofit == null) {
-                gankRetrofit = retrofit.create(GankRetrofit.class);
+                gankRetrofit = retrofit.create(ApiService.class);
             }
             return gankRetrofit;
         }

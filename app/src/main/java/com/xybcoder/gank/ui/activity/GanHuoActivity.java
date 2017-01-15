@@ -1,25 +1,23 @@
 package com.xybcoder.gank.ui.activity;
 
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
 import com.xybcoder.gank.R;
-import com.xybcoder.gank.adapter.GanHuoPagerAdapter;
+import com.xybcoder.gank.ui.adapter.GanHuoPagerAdapter;
 import com.xybcoder.gank.presenter.GanHuoPresenter;
 import com.xybcoder.gank.ui.iView.IBaseView;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by xybcoder on 2016/3/1.
  */
 public class GanHuoActivity extends ToolBarActivity<GanHuoPresenter> implements IBaseView {
 
-    @Bind(R.id.tab_layout)
+    @BindView(R.id.tab_layout)
     TabLayout tabLayout;
-    @Bind(R.id.container)
+    @BindView(R.id.container)
     ViewPager container;
 
     @Override

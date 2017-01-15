@@ -1,4 +1,4 @@
-package com.xybcoder.gank.adapter;
+package com.xybcoder.gank.ui.adapter;
 
 import android.animation.ObjectAnimator;
 import android.app.Activity;
@@ -8,10 +8,10 @@ import android.graphics.Color;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -27,7 +27,7 @@ import com.xybcoder.gank.util.DateUtil;
 import java.io.Serializable;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -60,16 +60,20 @@ public class MeiziAdapter extends RecyclerView.Adapter<MeiziAdapter.MeiziHolder>
         int green = (int) (Math.random() * 255);
         int blue = (int) (Math.random() * 255);
         holder.ivMeizi.setBackgroundColor(Color.argb(204, red, green, blue));
-        Glide.with(context)
-                .load(meizi.url)
-                .crossFade()
-                .into(holder.ivMeizi);
+        if(meizi!=null) {
+            Glide.with(context)
+                    .load(meizi.url)
+                    .crossFade()
+                    .into(holder.ivMeizi);
 
-        holder.tvWho.setText(meizi.who);
-        holder.tvAvatar.setText(meizi.who.substring(0, 1).toUpperCase());
-        holder.tvDesc.setText(meizi.desc);
-        holder.tvTime.setText(DateUtil.toDateTimeStr(meizi.publishedAt));
-        holder.tvAvatar.setVisibility(View.GONE);
+            holder.tvWho.setText(meizi.who);
+            holder.tvAvatar.setText(TextUtils.isEmpty(meizi.who)?"":meizi.who.substring(0, 1).toUpperCase());
+            holder.tvDesc.setText(meizi.desc);
+            if(meizi.publishedAt!=null) {
+                holder.tvTime.setText(DateUtil.toDateTimeStr(meizi.publishedAt));
+            }
+            holder.tvAvatar.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -89,15 +93,15 @@ public class MeiziAdapter extends RecyclerView.Adapter<MeiziAdapter.MeiziHolder>
 
     class MeiziHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.iv_meizi)
+        @BindView(R.id.iv_meizi)
         RatioImageView ivMeizi;
-        @Bind(R.id.tv_who)
+        @BindView(R.id.tv_who)
         TextView tvWho;
-        @Bind(R.id.tv_avatar)
+        @BindView(R.id.tv_avatar)
         TextView tvAvatar;
-        @Bind(R.id.tv_desc)
+        @BindView(R.id.tv_desc)
         TextView tvDesc;
-        @Bind(R.id.tv_time)
+        @BindView(R.id.tv_time)
         TextView tvTime;
 
         @OnClick(R.id.iv_meizi)

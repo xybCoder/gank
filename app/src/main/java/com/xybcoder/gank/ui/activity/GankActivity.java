@@ -16,12 +16,11 @@ import android.widget.ImageView;
 import com.xybcoder.gank.GankConfig;
 import com.xybcoder.gank.R;
 import com.xybcoder.gank.ShareElement;
-import com.xybcoder.gank.adapter.GankAdapter;
+import com.xybcoder.gank.ui.adapter.GankAdapter;
 import com.xybcoder.gank.model.entity.Gank;
 import com.xybcoder.gank.model.entity.Meizi;
 import com.xybcoder.gank.presenter.GankPresenter;
 import com.xybcoder.gank.ui.iView.IGankView;
-import com.xybcoder.gank.util.CommonUtil;
 import com.xybcoder.gank.util.DateUtil;
 import com.xybcoder.gank.util.NetworkUtils;
 import com.xybcoder.gank.util.ShareUtil;
@@ -30,8 +29,7 @@ import com.xybcoder.gank.util.TipUtil;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 
@@ -42,15 +40,15 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
     private GankAdapter adapter;
     private Calendar calendar;
 
-    @Bind(R.id.toolbar_layout)
+    @BindView(R.id.toolbar_layout)
     CollapsingToolbarLayout toolbarLayout;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
-    @Bind(R.id.iv_head)
+    @BindView(R.id.iv_head)
     ImageView ivHead;
-    @Bind(R.id.rv_gank)
+    @BindView(R.id.rv_gank)
     RecyclerView rvGank;
-    @Bind(R.id.progressbar)
+    @BindView(R.id.progressbar)
     SmoothProgressBar progressbar;
 
     @OnClick(R.id.fab)

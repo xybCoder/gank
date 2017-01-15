@@ -2,21 +2,20 @@ package com.xybcoder.gank.presenter;
 
 import android.content.Context;
 
-import com.xybcoder.gank.http.GankClient;
 import com.xybcoder.gank.model.GankData;
 import com.xybcoder.gank.model.entity.Gank;
+import com.xybcoder.gank.network.GankClient;
 import com.xybcoder.gank.ui.iView.IGankView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.functions.Func1;
-import rx.schedulers.Schedulers;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
+import io.reactivex.schedulers.Schedulers;
 
 /**
- *
  * Created by xybcoder on 2016/3/1.
  */
 public class GankPresenter extends BasePresenter<IGankView> {
@@ -27,30 +26,29 @@ public class GankPresenter extends BasePresenter<IGankView> {
 
     @Override
     public void release() {
-        subscription.unsubscribe();
-        subscription = null;
+
     }
 
     public void fetchGankData(int year, int month, int day) {
         iView.showProgressBar();
-        subscription = GankClient.getGankRetrofitInstance().getDailyData(year, month, day)
-                .map(new Func1<GankData, List<Gank>>() {
+        GankClient.getGankRetrofitInstance().getDailyData(year, month, day)
+                .map(new Function<GankData, List<Gank>>() {
                     @Override
-                    public List<Gank> call(GankData gankData) {
+                    public List<Gank> apply(GankData gankData) throws Exception {
                         return addAllResults(gankData.results);
                     }
                 })
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<List<Gank>>() {
+                .subscribe(new Consumer<List<Gank>>() {
                     @Override
-                    public void call(List<Gank> gankList) {
+                    public void accept(List<Gank> gankList) {
                         iView.showGankList(gankList);
                         iView.hideProgressBar();
                     }
-                }, new Action1<Throwable>() {
+                }, new Consumer<Throwable>() {
                     @Override
-                    public void call(Throwable throwable) {
+                    public void accept(Throwable throwable) {
                         iView.hideProgressBar();
                         iView.showErrorView();
                     }
@@ -68,7 +66,6 @@ public class GankPresenter extends BasePresenter<IGankView> {
         if (results.休息视频List != null) mGankList.addAll(0, results.休息视频List);
         return mGankList;
     }
-
 
 
 }

@@ -6,7 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.xybcoder.gank.R;
-import com.xybcoder.gank.adapter.GanHuoAdapter;
+import com.xybcoder.gank.ui.adapter.GanHuoAdapter;
 import com.xybcoder.gank.model.entity.Gank;
 import com.xybcoder.gank.presenter.GanHuoFragmentPresenter;
 import com.xybcoder.gank.ui.iView.IGanHuoView;
@@ -15,8 +15,7 @@ import com.xybcoder.gank.util.TipUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by xybcoder on 2016/3/1.
@@ -33,9 +32,9 @@ public class GanHuoFragment extends BaseFragment<GanHuoFragmentPresenter> implem
     private boolean canLoading = true;
 
 
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     LMRecyclerView recyclerView;
-    @Bind(R.id.swipe_refresh_layout)
+    @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
     public GanHuoFragment() {
@@ -63,7 +62,7 @@ public class GanHuoFragment extends BaseFragment<GanHuoFragmentPresenter> implem
 
     @Override
     protected void initPresenter() {
-        presenter = new GanHuoFragmentPresenter(getContext(),this);
+        presenter = new GanHuoFragmentPresenter(getActivity(),this);
         presenter.init();
     }
 

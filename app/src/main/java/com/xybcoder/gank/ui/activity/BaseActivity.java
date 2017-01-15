@@ -1,12 +1,11 @@
 package com.xybcoder.gank.ui.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.umeng.analytics.MobclickAgent;
-import com.xybcoder.gank.App;
 import com.xybcoder.gank.presenter.BasePresenter;
 
 import butterknife.ButterKnife;
@@ -14,7 +13,7 @@ import butterknife.ButterKnife;
 /**
  * Created by xybcoder on 2016/3/1.
  */
-public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
+public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatActivity{
 
     protected String TAG = this.getClass().getSimpleName();
     protected T presenter;
@@ -85,7 +84,7 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
+        ButterKnife.bind(this).unbind();
         Log.i(TAG, "onDestroy");
 
     }

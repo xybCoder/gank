@@ -20,8 +20,7 @@ import com.xybcoder.gank.ui.iView.IMeiZhiView;
 import com.xybcoder.gank.util.DateUtil;
 import com.xybcoder.gank.util.FileUtil;
 import com.xybcoder.gank.util.TipUtil;
-
-import butterknife.Bind;
+import butterknife.BindView;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
@@ -34,7 +33,7 @@ public class MeiZhiActivity extends ToolBarActivity<MeizhiPresenter> implements 
     MeizhiPresenter presenter;
     Bitmap girl;
 
-    @Bind(R.id.iv_meizhi)
+    @BindView(R.id.iv_meizhi)
     ImageView ivMeizhi;
 
     @Override

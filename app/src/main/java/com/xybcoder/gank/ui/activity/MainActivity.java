@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.umeng.update.UmengUpdateAgent;
 import com.xybcoder.gank.R;
-import com.xybcoder.gank.adapter.MeiziAdapter;
+import com.xybcoder.gank.ui.adapter.MeiziAdapter;
 import com.xybcoder.gank.model.entity.Meizi;
 import com.xybcoder.gank.presenter.MainPresenter;
 import com.xybcoder.gank.ui.iView.IMainView;
@@ -21,7 +21,7 @@ import com.xybcoder.gank.util.TipUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -37,13 +37,13 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements
     private boolean isRefresh = true;
     private boolean canLoading = true;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     LMRecyclerView recyclerView;
-    @Bind(R.id.swipe_refresh_layout)
+    @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
-    @Bind(R.id.fab)
+    @BindView(R.id.fab)
     FloatingActionButton fab;
     @OnClick(R.id.fab)
     void fabClick() {

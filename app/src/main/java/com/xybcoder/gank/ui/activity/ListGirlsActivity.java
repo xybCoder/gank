@@ -3,12 +3,10 @@ package com.xybcoder.gank.ui.activity;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.xybcoder.gank.R;
-import com.xybcoder.gank.adapter.ListGirlsAdapter;
+import com.xybcoder.gank.ui.adapter.ListGirlsAdapter;
 import com.xybcoder.gank.model.entity.Meizi;
 import com.xybcoder.gank.presenter.ListGirlsPresenter;
 import com.xybcoder.gank.ui.iView.IListGirlsView;
@@ -16,19 +14,18 @@ import com.xybcoder.gank.ui.widget.LMRecyclerView;
 import com.xybcoder.gank.util.TipUtil;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class ListGirlsActivity extends ToolBarActivity<ListGirlsPresenter> implements
         SwipeRefreshLayout.OnRefreshListener, IListGirlsView, LMRecyclerView.LoadMoreListener {
 
-    @Bind(R.id.coordinator_layout)
+    @BindView(R.id.coordinator_layout)
     CoordinatorLayout container;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.recycler_view)
+    @BindView(R.id.recycler_view)
     LMRecyclerView recyclerView;
-    @Bind(R.id.swipe_refresh_layout)
+    @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
 
     private List<Meizi> girlslist;

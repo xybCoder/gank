@@ -1,4 +1,4 @@
-package com.xybcoder.gank.adapter;
+package com.xybcoder.gank.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,7 +15,7 @@ import com.xybcoder.gank.util.StringStyleUtil;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -70,11 +70,11 @@ public class GankAdapter extends RecyclerView.Adapter<GankAdapter.GankHolder> {
     }
 
     class GankHolder extends RecyclerView.ViewHolder {
-        @Bind(R.id.tv_category)
+        @BindView(R.id.tv_category)
         TextView tvCategory;
-        @Bind(R.id.tv_gank_desc)
+        @BindView(R.id.tv_gank_desc)
         TextView tvGankDesc;
-        @Bind(R.id.ll_gank)
+        @BindView(R.id.ll_gank)
         LinearLayout llGank;
 
         @OnClick(R.id.ll_gank)

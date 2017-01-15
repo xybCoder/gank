@@ -17,8 +17,7 @@ import com.xybcoder.gank.model.entity.Gank;
 import com.xybcoder.gank.presenter.WebViewPresenter;
 import com.xybcoder.gank.ui.iView.IWebView;
 import com.xybcoder.gank.util.TipUtil;
-
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * Created by xybcoder on 2016/3/16.
@@ -29,11 +28,11 @@ public class WebActivity  extends ToolBarActivity<WebViewPresenter> implements I
     WebViewPresenter presenter;
     LinearLayout contentView;
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.web_view)
+    @BindView(R.id.web_view)
     WebView webView;
-    @Bind(R.id.progressbar)
+    @BindView(R.id.progressbar)
     NumberProgressBar progressbar;
 
     @Override
