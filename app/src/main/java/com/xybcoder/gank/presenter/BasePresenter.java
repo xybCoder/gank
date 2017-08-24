@@ -27,6 +27,10 @@ public abstract class BasePresenter<T extends IBaseView>  {
     public void init(){
         iView.initView();
     }
+    
+    public void onDestroy(){
+        iView=null;
+    }
 
     public abstract void release();
 }
