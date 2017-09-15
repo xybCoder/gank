@@ -43,7 +43,7 @@ public class WebActivity  extends ToolBarActivity<WebViewPresenter> implements I
     @Override
     protected void initPresenter() {
         presenter = new WebViewPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
     public static void loadWebViewActivity(Context from, Gank gank) {
         Intent intent = new Intent(from, WebActivity.class);
@@ -143,6 +143,5 @@ public class WebActivity  extends ToolBarActivity<WebViewPresenter> implements I
             webView.destroy();
             webView = null;
         }
-        presenter.release();
     }
 }

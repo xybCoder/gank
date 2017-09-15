@@ -23,12 +23,7 @@ public class GankPresenter extends BasePresenter<IGankView> {
     public GankPresenter(Context context, IGankView iView) {
         super(context, iView);
     }
-
-    @Override
-    public void release() {
-
-    }
-
+    
     public void fetchGankData(int year, int month, int day) {
         iView.showProgressBar();
         GankClient.getGankRetrofitInstance().getDailyData(year, month, day)

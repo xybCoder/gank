@@ -46,7 +46,7 @@ public class WebVideoActivity extends ToolBarActivity<WebVideoPresenter> impleme
     @Override
     protected void initPresenter() {
         presenter = new WebVideoPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override

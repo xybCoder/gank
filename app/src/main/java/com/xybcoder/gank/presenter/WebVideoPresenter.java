@@ -46,8 +46,4 @@ public class WebVideoPresenter extends BasePresenter<IWebVideo> {
         }
     }
 
-    @Override
-    public void release() {
-
-    }
 }

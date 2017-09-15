@@ -28,7 +28,7 @@ public class GanHuoActivity extends ToolBarActivity<GanHuoPresenter> implements 
     @Override
     protected void initPresenter() {
         presenter = new GanHuoPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
@@ -43,13 +43,6 @@ public class GanHuoActivity extends ToolBarActivity<GanHuoPresenter> implements 
     public boolean onOptionsItemSelected(MenuItem item) {
 
         return super.onOptionsItemSelected(item);
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.release();
     }
 
 }

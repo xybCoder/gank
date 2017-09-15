@@ -20,11 +20,6 @@ public class ListGirlsPresenter extends BasePresenter<IListGirlsView> {
         super(context, iView);
     }
 
-    @Override
-    public void release() {
-
-    }
-
     public void loadGirls(int page){
         iView.showProgressBar();
         GankClient.getGankRetrofitInstance().getMeiziData(page)

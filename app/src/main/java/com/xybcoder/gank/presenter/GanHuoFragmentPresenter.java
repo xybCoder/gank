@@ -19,24 +19,19 @@ public class GanHuoFragmentPresenter extends BasePresenter<IGanHuoView> {
         super(context, iView);
     }
 
-    @Override
-    public void release() {
-
-    }
-
-    public void loadGank(String type,int page){
+    public void loadGank(String type, int page) {
         iView.showProgressBar();
-         GankClient.getGankRetrofitInstance()
-                .getGanHuoData(type,page)
+        GankClient.getGankRetrofitInstance()
+                .getGanHuoData(type, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<GanHuoData>() {
                     @Override
                     public void accept(GanHuoData ganHuoData) {
                         iView.hideProgressBar();
-                        if (ganHuoData.results.size() == 0){
+                        if (ganHuoData.results.size() == 0) {
                             iView.showNoMoreData();
-                        }else {
+                        } else {
                             iView.showListView(ganHuoData.results);
                         }
                     }

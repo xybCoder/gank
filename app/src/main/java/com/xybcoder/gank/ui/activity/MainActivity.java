@@ -59,7 +59,7 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements
     @Override
     protected void initPresenter() {
         presenter = new MainPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
@@ -150,13 +150,6 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements
             adapter.notifyDataSetChanged();
         }
     }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        presenter.release();
-    }
-
 
     @Override
     protected boolean canBack() {

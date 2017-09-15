@@ -45,7 +45,7 @@ public class MeiZhiActivity extends ToolBarActivity<MeizhiPresenter> implements 
     @Override
     protected void initPresenter() {
         presenter = new MeizhiPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
@@ -123,7 +123,6 @@ public class MeiZhiActivity extends ToolBarActivity<MeizhiPresenter> implements 
     protected void onDestroy() {
         super.onDestroy();
         ShareElement.shareDrawable = null;
-        presenter.release();
         attacher.cleanup();
     }
 

@@ -26,11 +26,6 @@ public class MeizhiPresenter extends BasePresenter<IMeiZhiView> {
         super(context, iView);
     }
 
-    @Override
-    public void release() {
-
-    }
-
     public void saveMeizhiImage(final Bitmap bitmap, final String title) {
         Observable.create(new ObservableOnSubscribe<Uri>() {
             @Override

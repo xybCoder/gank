@@ -14,7 +14,7 @@ import io.reactivex.disposables.Disposable;
  * 基础presenter
  * Created by xybcoder on 2016/3/1.
  */
-public abstract class BasePresenter<T extends IBaseView>  {
+public class BasePresenter<T extends IBaseView> {
 
     protected Context context;
     protected T iView;
@@ -24,13 +24,17 @@ public abstract class BasePresenter<T extends IBaseView>  {
         this.iView = iView;
     }
 
-    public void init(){
-        iView.initView();
-    }
-    
-    public void onDestroy(){
-        iView=null;
+    public void attachView(){
+        if(iView!=null){
+            iView.initView();
+        }
     }
 
-    public abstract void release();
+
+    public void detachView() {
+        if(iView!=null) {
+            iView = null;
+        }
+    }
+
 }

@@ -25,8 +25,4 @@ public class AboutPresenter extends BasePresenter<IAboutView> {
             context.startActivity(intent);
     }
 
-    @Override
-    public void release() {
-
-    }
 }

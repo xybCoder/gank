@@ -30,11 +30,6 @@ public class MainPresenter extends BasePresenter<IMainView> {
         super(context, iView);
     }
 
-    @Override
-    public void release() {
-
-    }
-
     public void fetchMeiziData(int page) {
         iView.showProgress();
          Observable.zip(GankClient.getGankRetrofitInstance().getMeiziData(page),

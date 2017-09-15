@@ -37,6 +37,10 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment {
 
     @Override
     public void onDestroy() {
+        if(presenter!=null){
+            presenter.detachView();
+            presenter=null;
+        }
         super.onDestroy();
        // App.getRefWatcher(getContext()).watch(this);
     }

@@ -60,32 +60,35 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
 
     @Override
     protected void onResume() {
-        super.onResume();
-        MobclickAgent.onResume(this);
         Log.i(TAG, "onResume");
+        MobclickAgent.onResume(this);
+        super.onResume();
 
     }
 
     @Override
     protected void onPause() {
-        super.onPause();
-        MobclickAgent.onResume(this);
         Log.i(TAG, "onPause");
+        MobclickAgent.onResume(this);
+        super.onPause();
 
     }
 
     @Override
     protected void onStop() {
-        super.onStop();
         Log.i(TAG, "onStop");
-
+        super.onStop();
     }
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.bind(this).unbind();
         Log.i(TAG, "onDestroy");
+        ButterKnife.bind(this).unbind();
+        if(presenter!=null){
+            presenter.detachView();
+            presenter=null;
+        }
+        super.onDestroy();
 
     }
 

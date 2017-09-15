@@ -12,9 +12,4 @@ public class GanHuoPresenter extends BasePresenter<IBaseView> {
     public GanHuoPresenter(Context context, IBaseView iView) {
         super(context, iView);
     }
-
-    @Override
-    public void release() {
-
-    }
 }

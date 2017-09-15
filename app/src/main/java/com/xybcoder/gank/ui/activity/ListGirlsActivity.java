@@ -43,7 +43,7 @@ public class ListGirlsActivity extends ToolBarActivity<ListGirlsPresenter> imple
     @Override
     protected void initPresenter() {
         presenter = new ListGirlsPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
 
@@ -115,14 +115,6 @@ public class ListGirlsActivity extends ToolBarActivity<ListGirlsPresenter> imple
             adapter.notifyDataSetChanged();
         }
     }
-
-
-        @Override
-        protected void onDestroy () {
-            super.onDestroy();
-            presenter.release();
-        }
-
 
         @Override
         protected boolean canBack () {

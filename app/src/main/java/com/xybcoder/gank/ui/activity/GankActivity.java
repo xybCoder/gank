@@ -91,7 +91,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
     @Override
     protected void initPresenter() {
         presenter = new GankPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
@@ -171,7 +171,5 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
         super.onDestroy();
         ShareElement.shareDrawable = null;
         list = null;
-        presenter.release();
-        presenter = null;
     }
 }

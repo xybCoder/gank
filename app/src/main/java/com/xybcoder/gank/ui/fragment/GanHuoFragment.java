@@ -63,7 +63,7 @@ public class GanHuoFragment extends BaseFragment<GanHuoFragmentPresenter> implem
     @Override
     protected void initPresenter() {
         presenter = new GanHuoFragmentPresenter(getActivity(),this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
@@ -143,11 +143,5 @@ public class GanHuoFragment extends BaseFragment<GanHuoFragmentPresenter> implem
         isRefresh = true;
         page = 1;
         presenter.loadGank(type,page);
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        presenter.release();
     }
 }

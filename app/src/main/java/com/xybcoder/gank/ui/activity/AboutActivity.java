@@ -38,7 +38,7 @@ public class AboutActivity extends ToolBarActivity<AboutPresenter> implements IA
     @Override
     protected void initPresenter() {
         presenter = new AboutPresenter(this, this);
-        presenter.init();
+        presenter.attachView();
     }
 
     @Override
