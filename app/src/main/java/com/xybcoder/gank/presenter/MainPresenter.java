@@ -4,10 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.xybcoder.gank.GankConfig;
-import com.xybcoder.gank.network.GankClient;
 import com.xybcoder.gank.model.FunnyData;
 import com.xybcoder.gank.model.MeiziData;
 import com.xybcoder.gank.model.entity.Gank;
+import com.xybcoder.gank.network.HostType;
+import com.xybcoder.gank.network.RetrofitManager;
 import com.xybcoder.gank.ui.activity.AboutActivity;
 import com.xybcoder.gank.ui.activity.GanHuoActivity;
 import com.xybcoder.gank.ui.activity.ListGirlsActivity;
@@ -32,8 +33,8 @@ public class MainPresenter extends BasePresenter<IMainView> {
 
     public void fetchMeiziData(int page) {
         iView.showProgress();
-         Observable.zip(GankClient.getGankRetrofitInstance().getMeiziData(page),
-                 GankClient.getGankRetrofitInstance().getFunnyData(page),
+         Observable.zip( RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService().getMeiziData(page),
+                 RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService().getFunnyData(page),
                  new BiFunction<MeiziData, FunnyData, MeiziData>() {
                     @Override
                     public MeiziData apply(MeiziData meiziData, FunnyData funnyData) {

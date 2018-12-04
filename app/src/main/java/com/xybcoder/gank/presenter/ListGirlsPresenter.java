@@ -2,8 +2,9 @@ package com.xybcoder.gank.presenter;
 
 import android.content.Context;
 
-import com.xybcoder.gank.network.GankClient;
 import com.xybcoder.gank.model.MeiziData;
+import com.xybcoder.gank.network.HostType;
+import com.xybcoder.gank.network.RetrofitManager;
 import com.xybcoder.gank.ui.iView.IListGirlsView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,7 +23,7 @@ public class ListGirlsPresenter extends BasePresenter<IListGirlsView> {
 
     public void loadGirls(int page){
         iView.showProgressBar();
-        GankClient.getGankRetrofitInstance().getMeiziData(page)
+        RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService().getMeiziData(page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<MeiziData>() {

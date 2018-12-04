@@ -2,8 +2,9 @@ package com.xybcoder.gank.presenter;
 
 import android.content.Context;
 
-import com.xybcoder.gank.network.GankClient;
 import com.xybcoder.gank.model.GanHuoData;
+import com.xybcoder.gank.network.HostType;
+import com.xybcoder.gank.network.RetrofitManager;
 import com.xybcoder.gank.ui.iView.IGanHuoView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -21,7 +22,7 @@ public class GanHuoFragmentPresenter extends BasePresenter<IGanHuoView> {
 
     public void loadGank(String type, int page) {
         iView.showProgressBar();
-        GankClient.getGankRetrofitInstance()
+        RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService()
                 .getGanHuoData(type, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

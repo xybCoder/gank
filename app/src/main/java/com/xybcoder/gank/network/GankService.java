@@ -13,7 +13,7 @@ import retrofit2.http.Path;
  * get data
  * Created by xybcoder on 2016/3/1.
  */
-public interface ApiService {
+public interface GankService {
 
     // http://gank.io/api/data/数据类型/请求个数/第几页
     @GET(value = "data/福利/" + GankConfig.MEIZI_SIZE + "/{page}")

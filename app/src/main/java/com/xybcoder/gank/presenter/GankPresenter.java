@@ -4,7 +4,8 @@ import android.content.Context;
 
 import com.xybcoder.gank.model.GankData;
 import com.xybcoder.gank.model.entity.Gank;
-import com.xybcoder.gank.network.GankClient;
+import com.xybcoder.gank.network.HostType;
+import com.xybcoder.gank.network.RetrofitManager;
 import com.xybcoder.gank.ui.iView.IGankView;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class GankPresenter extends BasePresenter<IGankView> {
     
     public void fetchGankData(int year, int month, int day) {
         iView.showProgressBar();
-        GankClient.getGankRetrofitInstance().getDailyData(year, month, day)
+        RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService().getDailyData(year, month, day)
                 .map(new Function<GankData, List<Gank>>() {
                     @Override
                     public List<Gank> apply(GankData gankData) throws Exception {
