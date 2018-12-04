@@ -1,3 +1,8 @@
+# 1.3.0版本gank
+
+**1. 调整优化网络相关的类**
+
+
 # 1.2.0版本gank
 
 **1. 升级rxjava,retrofit,butterknife等相关的一些依赖库**
