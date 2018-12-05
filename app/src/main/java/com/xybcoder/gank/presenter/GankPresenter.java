@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
@@ -32,6 +33,12 @@ public class GankPresenter extends BasePresenter<IGankView> {
                     @Override
                     public List<Gank> apply(GankData gankData) throws Exception {
                         return addAllResults(gankData.results);
+                    }
+                })
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        addDisposable(disposable);
                     }
                 })
                 .subscribeOn(Schedulers.newThread())

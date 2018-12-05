@@ -77,6 +77,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends RxAppCompatA
     @Override
     protected void onStop() {
         Log.i(TAG, "onStop");
+        if(presenter!=null){
+            presenter.dispose();
+        }
         super.onStop();
     }
 

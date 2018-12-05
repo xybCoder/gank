@@ -30,6 +30,14 @@ public abstract class BaseFragment<T extends BasePresenter> extends RxFragment {
     protected abstract void initPresenter();
 
     @Override
+    public void onStop() {
+        if(presenter!=null){
+            presenter.dispose();
+        }
+        super.onStop();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         ButterKnife.bind(getActivity()).unbind();

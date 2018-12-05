@@ -8,6 +8,7 @@ import com.xybcoder.gank.network.RetrofitManager;
 import com.xybcoder.gank.ui.iView.IListGirlsView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 
@@ -24,6 +25,12 @@ public class ListGirlsPresenter extends BasePresenter<IListGirlsView> {
     public void loadGirls(int page){
         iView.showProgressBar();
         RetrofitManager.getInstance(HostType.GANK_TYPE).getGankService().getMeiziData(page)
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        addDisposable(disposable);
+                    }
+                })
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<MeiziData>() {
