@@ -10,11 +10,10 @@ public class HostType {
     //多少种Host类型
     public static final int TYPE_COUNT = 3;
 
-    //网易新闻视频的host
+   
     @HostTypeChecker
     public static final int GANK_TYPE = 1;
 
-    //新浪图片的HOST
     @HostTypeChecker
     public static final int NEWS_TYPE = 2;
 
