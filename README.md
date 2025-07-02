@@ -8,8 +8,6 @@
 
 gank升级以后比同类的app代码更加简洁，界面更加简洁，本app是为新手入门提供一个简单的实践机会，不会跟其他app一样那么炫。
 
-
-
 # 1.2.0版本gank
 
 **1. 升级rxjava,retrofit,butterknife等相关的一些依赖库**
